@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/gobot_orm.png-5628d191bf44df18a7fbae67f080c5b5.s3tc.stex"
-path.etc2="res://.import/gobot_orm.png-5628d191bf44df18a7fbae67f080c5b5.etc2.stex"
+path.s3tc="res://.import/gobot_orm.png-6701094a81cf4a79b64a2cde08c44def.s3tc.stex"
+path.etc2="res://.import/gobot_orm.png-6701094a81cf4a79b64a2cde08c44def.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://materials/gobot_old/gobot_orm.png"
-dest_files=[ "res://.import/gobot_orm.png-5628d191bf44df18a7fbae67f080c5b5.s3tc.stex", "res://.import/gobot_orm.png-5628d191bf44df18a7fbae67f080c5b5.etc2.stex" ]
+source_file="res://materials/gobot/gobot_orm.png"
+dest_files=[ "res://.import/gobot_orm.png-6701094a81cf4a79b64a2cde08c44def.s3tc.stex", "res://.import/gobot_orm.png-6701094a81cf4a79b64a2cde08c44def.etc2.stex" ]
 
 [params]
 
