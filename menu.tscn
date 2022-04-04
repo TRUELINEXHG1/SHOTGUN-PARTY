@@ -1,0 +1,381 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://sounds/menu/drone.ogg" type="AudioStream" id=2]
+[ext_resource path="res://sounds/menu/click.wav" type="AudioStream" id=3]
+[ext_resource path="res://fonts/poppins.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://scenes/menu/menu.gd" type="Script" id=6]
+[ext_resource path="res://fonts/poppins_bold.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://misc/default.theme" type="Theme" id=9]
+
+[sub_resource type="DynamicFont" id=9]
+size = 14
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="DynamicFont" id=8]
+size = 24
+font_data = ExtResource( 5 )
+
+[node name="menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 9 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.215686, 0.227451, 0.262745, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ver" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0.392157 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = 64.0
+margin_right = -64.0
+margin_bottom = -64.0
+custom_fonts/font = SubResource( 9 )
+text = "0.0.0"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="container" type="VBoxContainer" parent="."]
+modulate = Color( 1, 1, 1, 0.882353 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = 64.0
+margin_right = -64.0
+margin_bottom = -64.0
+custom_constants/separation = 16
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="container"]
+margin_right = 896.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 2 )
+text = "Godot Shotgun Party"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="main" type="GridContainer" parent="container"]
+margin_top = 62.0
+margin_right = 896.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 200, 0 )
+custom_constants/vseparation = 16
+custom_constants/hseparation = 16
+
+[node name="host" type="Button" parent="container/main"]
+margin_right = 200.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 200, 32 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "Host"
+flat = true
+align = 0
+
+[node name="connect" type="Button" parent="container/main"]
+margin_top = 48.0
+margin_right = 200.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 32 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "Connect"
+flat = true
+align = 0
+
+[node name="settings" type="Button" parent="container/main"]
+margin_top = 96.0
+margin_right = 200.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 200, 32 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+disabled = true
+text = "Settings"
+flat = true
+align = 0
+
+[node name="quit" type="Button" parent="container/main"]
+margin_top = 144.0
+margin_right = 200.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 200, 32 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "Quit"
+flat = true
+align = 0
+
+[node name="host" type="VBoxContainer" parent="container"]
+visible = false
+margin_top = 62.0
+margin_right = 896.0
+margin_bottom = 241.0
+custom_constants/separation = 16
+
+[node name="subtitle" type="Label" parent="container/host"]
+margin_right = 896.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 8 )
+text = "Host"
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bot_count" type="HBoxContainer" parent="container/host"]
+margin_top = 51.0
+margin_right = 896.0
+margin_bottom = 83.0
+custom_constants/separation = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="container/host/bot_count"]
+margin_right = 200.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 200, 32 )
+text = "Bots to spawn"
+valign = 1
+
+[node name="slider" type="HSlider" parent="container/host/bot_count"]
+margin_left = 232.0
+margin_right = 392.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 160, 32 )
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+
+[node name="value" type="Label" parent="container/host/bot_count"]
+margin_left = 424.0
+margin_right = 429.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+text = "0"
+valign = 1
+
+[node name="max_score" type="HBoxContainer" parent="container/host"]
+margin_top = 99.0
+margin_right = 896.0
+margin_bottom = 131.0
+custom_constants/separation = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="container/host/max_score"]
+margin_right = 200.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 200, 32 )
+text = "Maximum score"
+valign = 1
+
+[node name="slider" type="HSlider" parent="container/host/max_score"]
+margin_left = 232.0
+margin_right = 392.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 160, 32 )
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+
+[node name="value" type="Label" parent="container/host/max_score"]
+margin_left = 424.0
+margin_right = 429.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+text = "0"
+valign = 1
+
+[node name="buttons" type="HBoxContainer" parent="container/host"]
+margin_top = 147.0
+margin_right = 896.0
+margin_bottom = 179.0
+custom_constants/separation = 32
+
+[node name="host" type="Button" parent="container/host/buttons"]
+margin_right = 200.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 200, 0 )
+text = "Host a game"
+
+[node name="back" type="Button" parent="container/host/buttons"]
+margin_left = 232.0
+margin_right = 432.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 200, 0 )
+text = "Back"
+
+[node name="connect" type="VBoxContainer" parent="container"]
+visible = false
+margin_top = 265.0
+margin_right = 824.0
+margin_bottom = 400.0
+custom_constants/separation = 16
+
+[node name="subtitle" type="Label" parent="container/connect"]
+margin_right = 824.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 8 )
+text = "Connect"
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ip" type="HBoxContainer" parent="container/connect"]
+margin_top = 51.0
+margin_right = 824.0
+margin_bottom = 87.0
+custom_constants/separation = 32
+
+[node name="label" type="Label" parent="container/connect/ip"]
+margin_top = 5.0
+margin_right = 200.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 200, 0 )
+text = "Host address"
+
+[node name="edit" type="LineEdit" parent="container/connect/ip"]
+margin_left = 232.0
+margin_right = 432.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 200, 0 )
+text = "localhost"
+
+[node name="buttons" type="HBoxContainer" parent="container/connect"]
+margin_top = 103.0
+margin_right = 824.0
+margin_bottom = 135.0
+custom_constants/separation = 32
+
+[node name="connect" type="Button" parent="container/connect/buttons"]
+margin_right = 200.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 200, 0 )
+text = "Connect to host"
+
+[node name="back" type="Button" parent="container/connect/buttons"]
+margin_left = 232.0
+margin_right = 432.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 200, 0 )
+text = "Back"
+
+[node name="click" type="AudioStreamPlayer" parent="container"]
+stream = ExtResource( 3 )
+bus = "Sounds"
+
+[node name="message" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="overlay" type="ColorRect" parent="message"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.705882 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="container" type="VBoxContainer" parent="message"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 200.0
+margin_top = 200.0
+margin_right = -200.0
+margin_bottom = -200.0
+custom_constants/separation = 16
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="Label" parent="message/container"]
+margin_top = 63.0
+margin_right = 624.0
+margin_bottom = 89.0
+text = "Some very important message here. "
+align = 1
+autowrap = true
+
+[node name="buttons" type="HBoxContainer" parent="message/container"]
+margin_top = 105.0
+margin_right = 624.0
+margin_bottom = 137.0
+alignment = 1
+
+[node name="ok" type="Button" parent="message/container/buttons"]
+margin_left = 262.0
+margin_right = 362.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 100, 0 )
+text = "Ok"
+
+[node name="drone" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -16.0
+autoplay = true
+bus = "Music"
+
+[connection signal="pressed" from="container/main/host" to="." method="_on_main_host_pressed"]
+[connection signal="pressed" from="container/main/connect" to="." method="_on_main_connect_pressed"]
+[connection signal="pressed" from="container/main/quit" to="." method="_on_main_quit_pressed"]
+[connection signal="value_changed" from="container/host/bot_count/slider" to="." method="_on_bot_count_changed"]
+[connection signal="value_changed" from="container/host/max_score/slider" to="." method="_on_max_score_changed"]
+[connection signal="pressed" from="container/host/buttons/host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="container/host/buttons/back" to="." method="_on_host_back_pressed"]
+[connection signal="pressed" from="container/connect/buttons/connect" to="." method="_on_connect_pressed"]
+[connection signal="pressed" from="container/connect/buttons/back" to="." method="_on_connect_back_pressed"]
+[connection signal="pressed" from="message/container/buttons/ok" to="." method="_on_message_ok_pressed"]
